@@ -24,19 +24,19 @@
             <div class="col-md-4">    
                 <div class="diposit status">
                     <h5>Diposit</h5>
-                    <h2>$<span id="dipositMain">50</span> </h2>
+                    <h2>$ <span id="dipositMain">50</span> </h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="widthdraw status">
                     <h5>Widthdraw</h5>
-                    <h2>$<span id="withdrawMain">40</span></h2>
+                    <h2>$ <span id="withdrawMain">40</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="balance status">
                     <h5>Balance</h5>
-                    <h2>$<span id="balanceMain">1200</span></h2>
+                    <h2>$ <span id="balanceMain">1200</span></h2>
                 </div>
             </div>
         </div>
@@ -44,50 +44,19 @@
             <div class="col-md-6">
                 <div class="submit-area">
                     <h4>Diposit</h4><br>
-                    <input type="text" id="diposit-amt" class="form-control" placeholder="$ Amount You Want To Diposit"><br>
+                    <input type="number" id="diposit-amt" class="form-control" placeholder="$ Amount You Want To Diposit"><br>
                     <button class="btn btn-success" id="diposit">Diposit</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="submit-area">
                     <h4>Widthdraw</h4><br>
-                    <input type="text" id="withdrawAmt" class="form-control" placeholder="$ Amount You Want To Withdraw"><br>
+                    <input type="number" id="withdrawAmt" class="form-control" placeholder="$ Amount You Want To Withdraw"><br>
                     <button class="btn btn-success" id="widthdraw">Widthdraw</button>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        const loginBtn = document.getElementById("login");
-        loginBtn.addEventListener("click", function(){
-            const loginArea = document.getElementById("login-area");
-            loginArea.style.display = "none";
-            const transectionArea = document.getElementById('transection-area').style.display = "block";
-        }); 
-
-        const dipositBtn = document.getElementById("diposit");
-        dipositBtn.addEventListener("click", function(){
-            const dipositAmt = document.getElementById("diposit-amt").value;
-            const dipositCnt = document.getElementById("dipositMain").innerText;
-            const totalDiposit = parseInt(dipositAmt) + parseInt(dipositCnt);
-            document.getElementById("dipositMain").innerText = totalDiposit;
-            const balance = document.getElementById("balanceMain").innerText;
-            const totalBalance = parseInt(dipositAmt) + parseInt(balance);
-            document.getElementById("balanceMain").innerText = totalBalance;
-        });
-
-        const widthdraw = document.getElementById("widthdraw");
-        widthdraw.addEventListener("click", function(){
-            const withdrawAmt = document.getElementById("withdrawAmt").value;
-            console.log(withdrawAmt);
-            const withdrawMain = document.getElementById("withdrawMain").innerText;
-            const totalWithdraw = parseInt(withdrawAmt) + parseInt(withdrawMain);
-            console.log(totalWithdraw);
-            document.getElementById("withdrawMain").innerText = totalWithdraw;
-            const balance = document.getElementById("balanceMain").innerText;
-            const updateBalance = parseInt(balance) - parseInt(withdrawAmt);
-            document.getElementById("balanceMain").innerText = updateBalance;
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
